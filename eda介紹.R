@@ -1,0 +1,40 @@
+setwd("C:/Users/user/Downloads")
+load(file="Anscombe.RData")
+Anscombe
+summary(Anscombe$x1)
+summary(Anscombe$x2)
+summary(Anscombe$x3)
+summary(Anscombe$x4)
+mean(Anscombe$x1)
+mean(Anscombe$x2)
+mean(Anscombe$x3)
+mean(Anscombe$x4)
+var(Anscombe$x1)
+var(Anscombe$x2)
+var(Anscombe$x3)
+var(Anscombe$x4)
+mean(Anscombe$y1)
+mean(Anscombe$y2)
+mean(Anscombe$y3)
+mean(Anscombe$y4)
+var(Anscombe$y1)
+var(Anscombe$y2)
+var(Anscombe$y3)
+var(Anscombe$y4)
+
+cor(x=Anscombe$x1, y=Anscombe$y1) #相關係數
+cor(x=Anscombe$x2, y=Anscombe$y2)
+cor(x=Anscombe$x3, y=Anscombe$y3)
+cor(x=Anscombe$x4, y=Anscombe$y4)
+
+lm(formula=y1~x1, data=Anscombe) #建立線性模型(迴歸分析)，~是"by"(按照)的意思
+#intercept是「截距」，x1的數值是「斜率」
+lm(formula=y2~x2, data=Anscombe)
+lm(formula=y3~x3, data=Anscombe)
+lm(formula=y4~x4, data=Anscombe)
+
+par(mfrow=c(2,2))
+plot(x=Anscombe$x1, y=Anscombe$y1, type="p", cex=3, col="red")
+plot(x=Anscombe$x2, y=Anscombe$y2, type="p", cex=3, col="red")
+plot(x=Anscombe$x3, y=Anscombe$y3, type="p", cex=3, col="red")
+plot(x=Anscombe$x4, y=Anscombe$y4, type="p", cex=3, col="red")
